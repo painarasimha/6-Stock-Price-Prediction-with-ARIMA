@@ -7,6 +7,12 @@ import seaborn as sns
 def visualize(data):
     df = pd.read_csv(data)
 
+    # Replacing '$' with ''.
+    df['Close/Last'] = df['Close/Last'].astype('float64')
+    df['Open'] = df['Open'].astype('float64')
+    df['High'] = df['High'].astype('float64')
+    df['Low'] = df['Low'].astype('float64')
+
     figures = []
 
     # Visualizations of the df
