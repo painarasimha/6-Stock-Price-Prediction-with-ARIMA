@@ -38,6 +38,5 @@ def load_data(filepath):
     print(f"Testing Data : {test_data.shape}")
 
     # Saving the training and testing dataset
+    return train_data, test_data
 
-    train_data.to_csv('data/training_data.csv', index=False)
-    test_data.to_csv('data/testing_data.csv', index=False)
