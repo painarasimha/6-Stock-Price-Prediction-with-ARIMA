@@ -11,10 +11,10 @@ def visualize(data):
     df = pd.read_csv(data)
 
     # Replacing '$' with ''.
-    df['Close/Last'] = df['Close/Last'].str.replace('$', '', regex=False)
-    df['Open'] = df['Open'].str.replace('$', '', regex=False)
-    df['High'] = df['High'].str.replace('$', '', regex=False)
-    df['Low'] = df['Low'].str.replace('$', '', regex=False)
+    df['Close/Last'] = df['Close/Last'].str.replace('$', '', regex=False).astype('float64')
+    df['Open'] = df['Open'].str.replace('$', '', regex=False).astype('float64')
+    df['High'] = df['High'].str.replace('$', '', regex=False).astype('float64')
+    df['Low'] = df['Low'].str.replace('$', '', regex=False).astype('float64')
 
     # Visualizations of the df
 
