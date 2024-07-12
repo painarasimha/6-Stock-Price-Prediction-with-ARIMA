@@ -80,7 +80,3 @@ def visualize(data):
     plt.legend()
     plt.savefig('results/volatility.png')
     plt.close()
-
-
-if __name__ == '__main__':
-    visualize('data/data.csv')
