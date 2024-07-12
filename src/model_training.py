@@ -25,7 +25,6 @@ def train_model(data, order=(5,1,0)):
 
     print(model_fitted.summary())
 
-    forecasts = []
 
     # Plot the forecast
     forecast = model_fitted.forecast(steps=30)
@@ -36,7 +35,6 @@ def train_model(data, order=(5,1,0)):
     ax7.set_ylabel('Close Price')
     ax7.set_title('Stock Price Forecast')
     ax7.legend()
-    forecasts.append(fig7)
 
     # returning the trained model and the forecast plot
-    return forecasts, model_fitted
+    return fig7, model_fitted
