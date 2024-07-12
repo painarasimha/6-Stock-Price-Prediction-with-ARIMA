@@ -22,15 +22,18 @@ def load_data(filepath):
     tscv = TimeSeriesSplit(n_splits=5)
     data_splits = tscv.split(data)
 
-    train_data = pd.DataFrame()
-    test_data = pd.DataFrame()
+    train_data = []
+    test_data = []
 
     for i, (train_index, test_index) in enumerate(data_splits):
         train_set = data.iloc[train_index]
         test_set = data.iloc[test_index]
 
-        train_data = pd.concat([train_data, train_set])
-        test_data = pd.concat([test_data, test_set])
+        train_data.append(train_set)
+        test_data.append(test_set)
+
+    train_data = pd.concat(train_data, axis=0)
+    test_data = pd.concat(test_data, axis=0)
 
     # Checking for the shape of training and testing set
 
