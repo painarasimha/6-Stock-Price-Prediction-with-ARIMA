@@ -25,17 +25,20 @@ def train_model(data, order=(5,1,0)):
 
     print(model_fitted.summary())
 
+    forecasts = []
+
     # Plot the forecast
     forecast = model_fitted.forecast(steps=30)
-    plt.figure(figsize=(10,6))
-    plt.plot(training_data.index, training_data, label='Historical Data')
-    plt.plot(forecast.index , forecast, label='Forecast', color='red')
-    plt.xlabel('Date')
-    plt.ylabel('Close Price')
-    plt.title('Stock Price Forecast')
-    plt.legend()
-    plt.savefig('results/forecast.png')
-    plt.close()
+    fig7, ax7 =plt.figure(figsize=(10,6))
+    ax7.plot(training_data.index, training_data, label='Historical Data')
+    ax7.plot(forecast.index , forecast, label='Forecast', color='red')
+    ax7.xlabel('Date')
+    ax7.ylabel('Close Price')
+    ax7.title('Stock Price Forecast')
+    ax7.legend()
+    forecasts.append(fig7)
+
+    return forecasts
 
 
     # Saving the trained model using joblib
