@@ -7,12 +7,6 @@ import seaborn as sns
 def visualize(data):
     df = pd.read_csv(data)
 
-    # Replacing '$' with ''.
-    df['Close/Last'] = df['Close/Last'].str.replace('$', '', regex=False).astype('float64')
-    df['Open'] = df['Open'].str.replace('$', '', regex=False).astype('float64')
-    df['High'] = df['High'].str.replace('$', '', regex=False).astype('float64')
-    df['Low'] = df['Low'].str.replace('$', '', regex=False).astype('float64')
-
     figures = []
 
     # Visualizations of the df
