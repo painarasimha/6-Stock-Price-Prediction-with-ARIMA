@@ -40,6 +40,3 @@ def train_model(data, order=(5,1,0)):
 
     # Saving the trained model using joblib
     joblib.dump(model_fitted, 'models/ARIMA_model.pkl')
-
-if __name__ == '__main__':
-    train_model('data/training_data.csv')
