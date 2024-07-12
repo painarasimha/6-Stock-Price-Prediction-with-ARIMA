@@ -38,8 +38,5 @@ def train_model(data, order=(5,1,0)):
     ax7.legend()
     forecasts.append(fig7)
 
-    return forecasts
-
-
-    # Saving the trained model using joblib
-    joblib.dump(model_fitted, 'models/ARIMA_model.pkl')
+    # returning the trained model and the forecast plot
+    return forecasts, model_fitted
