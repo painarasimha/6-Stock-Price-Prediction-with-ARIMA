@@ -7,7 +7,7 @@ def visualize(data):
 
     # Function to clean and convert to float
     def clean_and_convert_to_float(column):
-        df[column] = df[column].str.replace('[\$,]', '', regex=True).astype('float64')
+        df[column] = df[column].astype('float64')
 
     # Clean and convert columns
     clean_and_convert_to_float('Close/Last')
