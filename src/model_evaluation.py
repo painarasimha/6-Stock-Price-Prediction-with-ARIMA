@@ -35,7 +35,3 @@ def evaluate_model(model_fit, training_data, testing_data):
     rmse = np.sqrt(mean_squared_error(test_data, predictions))
     report.write(f"RMSE: {rmse}")
     report.close()
-
-if __name__ == '__main__':
-    fit_model = joblib.load('models/ARIMA_model.pkl')
-    evaluate_model(fit_model, 'data/training_data.csv', 'data/testing_data.csv')
